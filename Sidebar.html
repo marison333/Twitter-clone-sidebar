@@ -1,0 +1,160 @@
+<!-- 
+    Marison:
+    Om de hoofdpagina te maken heb ik een tutorial gebruikt (regel 17 t/m 131).
+    https://www.youtube.com/watch?v=0MDBVR93g7E&t=1s
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chirpify</title>
+    <link rel="stylesheet" href="Sidebar.css">
+    <link rel="shortcut icon" href="./images/twitter.png" type="image/png">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="sidebar">
+            <ul class="navbar">
+                <li class="nav-bar-brand">
+                    <a href="#">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+
+                <li class="navitem">
+                    <a href="Sidebar.html" class="item-icon home">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="itemlink">Home</a>
+                </li>
+
+                <li class="navitem">
+                    <a href="#" class="item-icon hash">
+                        <span>#</span>
+                    </a>
+                    <a href="#" class="itemlink">Explore</a>
+                </li>
+
+                <li class="navitem">
+                    <a href="#" class="item-icon">
+                        <ion-icon name="notifications-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="itemlink">Notifications</a>
+                </li>
+
+                <li class="navitem">
+                    <a href="#" class="item-icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="itemlink">Messages</a>
+                </li>
+
+                <li class="navitem">
+                    <a href="#" class="item-icon">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="itemlink">Bookmark</a>
+                </li>
+
+                <li class="navitem">
+                    <a href="#" class="item-icon">
+                        <ion-icon name="reader-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="itemlink">Lists</a>
+                </li>
+
+                <li class="navitem">
+                    <a href="#" class="item-icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="itemlink">Profile</a>
+                </li>
+
+                <li class="navitem"id="moreBtn">
+                    <a href="#" class="item-icon">
+                        <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="itemlink">More</a>
+                </li>
+
+                <a href="#" class="tweetBtn"><ion-icon name="pencil"></ion-icon><div class="text">Tweet</div></a>
+
+                <!-- Sub Menu -->
+                <div class="subItemBox">
+                    <ul>
+                        <li class="subItem">
+                            <a href="#" class="item-icon">
+                                <ion-icon name="settings-outline"></ion-icon>
+                            </a>
+                            <a href="#" class="item-link">Settings</a>
+                        </li>
+
+                        <li class="subItem">
+                            <a href="#" class="item-icon">
+                                <ion-icon name="help-circle-outline"></ion-icon>
+                            </a>
+                            <a href="#" class="item-link">Help Center</a>
+                        </li>
+
+                        <li class="subItem">
+                            <a href="#" class="item-icon">
+                                <ion-icon name="color-palette-outline"></ion-icon>
+                            </a>
+                            <a href="#" class="item-link">Display</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </ul>
+
+            <a href="#" class="profileBtn">
+                <div class="profileInfo">
+                    <img src="images/chirpify.png" alt="" class="profileImg" width="35" height="35">
+                    <div>
+                        <p class="name">John</p>
+                        <p class="username">@johndoe</p>
+                    </div>
+                </div>
+                <div class="option-icon">
+                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                </div>
+            </a>
+        </div>
+
+        <div class="overlay"></div>
+
+        <div class="test">1 2 3</div>
+    </div>
+
+
+    <script>
+        const moreBtn = document.querySelector('#moreBtn');
+        const subItemBox = document.querySelector('.subItemBox');
+        const overlay = document.querySelector('.overlay');
+
+        moreBtn.addEventListener('click', function(){
+            subItemBox.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        overlay.addEventListener('click', function(){
+            subItemBox.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
+
+    <!-- 
+        Marison:
+        een open source voor icons site genaamd ion icons
+        https://ionic.io/ionicons/usage
+        daarom zie je de tag <ion-icon> staan in de sidebar
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

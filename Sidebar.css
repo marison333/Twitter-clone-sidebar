@@ -1,0 +1,284 @@
+/*    Marison:
+    Om de hoofdpagina te maken heb ik een tutorial gebruikt,
+    omdat we een man tekort waren.
+*/
+:root {
+    --background: #000;
+    --brandBackground:  #1d9bf020;
+    --brandcolor: #d9d9d9;
+    --itemBackground: #d9d9d920;
+    --colorPrimary: #d9d9d9;
+    --colorSecondary: #6e767d;
+    --colorWhite: #fff;
+    --tweetBtnBg: #5943d6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--colorPrimary);
+    font-size: 18px;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background: var(--background);
+    padding: 0 3em;
+}
+
+.container {
+    max-width: 1440px;
+    margin: auto;
+    height: 100vh;
+
+}
+
+.sidebar {
+   height: 100%;
+   width: 260px;
+   border-right: 1px solid #fff2;
+   padding: 10px 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between; 
+   order: 0;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 100;
+}
+
+.nav-bar-brand {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 8px 8px 4px 10px;
+    border-radius: 50%;
+}
+
+.nav-bar-brand:hover{
+    background: var(--brandBackground);
+}
+
+.nav-bar-brand a icon-icon {
+    font-size: 30px;
+}
+
+.navitem {
+    padding: 8px 25px 8px 10px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navitem:hover {
+    background: var(--itemBackground);
+}
+
+.navitem .item-icon {
+    margin-right: 15px;
+}
+
+.navitem .item-icon ion-icon {
+    font-size: 24px;
+}
+
+.navitem .item-icon.hash {
+    padding: 0 3px;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+a.tweetBtn {
+    display: block;
+    width: 230px;
+    background: var(--tweetBtnBg);
+    color: var(--colorWhite);
+    text-align: center;
+    padding: 15px;
+    margin-top: 5px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+a.tweetBtn .item-icon {
+    font-size: 20px;
+    color: #fff;
+    display: none;
+}
+
+a.tweetBtn:hover {
+    --tweetBtnBg: #b49cfc;
+}
+
+a.profileBtn {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+a.profileBtn:hover {
+    background: var(--itemBackground);
+}
+
+.profileInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img.profileImg {
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.profileInfo .name {
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.profileInfo .username {
+    color: var(--colorSecondary);
+}
+
+.option-icon ion-icon {
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+
+.subItemBox {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    background: var(--background);
+    box-shadow: 0 0 10px #fff5;
+    width: 190px;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 100;
+    display: none;
+}
+
+.subItemBox.active {
+    display: block;
+}
+
+.subItem {
+    padding: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.subItem:hover {
+    background: #15181c;
+}
+
+.subItem .item-icon {
+    margin-right: 10px;
+}
+
+.subItem .item-icon ion-icon {
+    font-size: 13px;
+}
+
+.subItem .item-link {
+    font-size: 14px;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    display: none;
+    z-index: 10;
+}
+
+.overlay.active {
+    display: block;
+}
+
+@media screen and (max-width: 1200px) {
+    body{
+        padding: 0 1em;
+    }
+    nav.sidebar {
+        width: 75px;
+    }
+    .navitem {
+        padding: 9px 11px;
+    }
+    .navitem .item-icon {
+        margin-right: 0;
+    }
+    .navitem .item-link {
+        display: none;
+    }
+    .navitem.hash {
+        width: 48px;
+        height: 48px;
+    }
+    a.tweetBtn {
+        font-size: 20px;
+        width: auto;
+        padding: 10px;
+    }
+    a.tweetBtn ion-icon {
+        display: block;
+    }
+    a.tweetBtn .text {
+        display: none;
+    }
+
+    .profileInfo > div {
+        display: none;
+    }
+    .profileInfo .option-icon {
+        display: none;
+    }
+    img.profileImg {
+        margin-right: 0;
+    }
+    a.profileBtn {
+        width: 55px;
+    }
+}
+
+.test {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    order: 1;
+}
